@@ -1,0 +1,113 @@
+rubby
+
+
+unless
+get input from console => gets.chomp
+print string = "#{varible}"
+capital = variable.capitalize!
+uppercase = variable.upcase
+lowercase = variable.downcase
+is variable contains string = variable.include?
+replace string = variable.gsub!(/e/, "th")
+
+===================================
+LOOPING & ARRAY
+===================================
+
+#==== loop do ====# 
+i = 20
+loop do
+  i -= 1
+  next if i % 2 != 0
+  print "#{i}"
+  break if i <= 0
+end
+
+#==== loop array ====# 
+array = [1,2,3,4,5]
+
+array.each do |x|
+  x += 10
+  print "#{x}"
+end
+
+#==== one way to loop ====#
+numbers.each { |item| puts item }
+
+#==== print 10 time ====#
+10.times {print "say 10 times"}
+
+#==== while ====#
+i = 1
+while i <= 50 do
+  print i
+  i += 1
+end
+
+#==== until ====#
+i = 1
+until i == 51 do
+  print i
+  i += 1
+end
+
+#==== hashes ====#
+my_hash = { "name" => "Eric",
+  "age" => 26,
+  "hungry?" => true
+}
+
+puts my_hash["name"]
+puts my_hash["age"]
+puts my_hash["hungry?"]
+
+#==== range number to array ====#
+puts (1..10).to_a
+
+#==== splat arguments ====#
+def what_up(greeting, *friends)
+  friends.each { |friend| puts "#{greeting}, #{friend}!" }
+end
+
+what_up("What up", "Ian", "Zoe", "Zenas", "Eleanor")
+
+#==== sorting array ====#
+my_array.sort!
+
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# To sort our books in ascending order, in-place
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+
+books.sort! { |firstBook, secondBook| secondBook <=> firstBook }
+
+puts books
+
+#==== select ====#
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 5,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+# Add your code below!
+
+good_movies = movie_ratings.select {|name, rating| rating > 3}
+puts good_movies
+
+#==== each key & value ====#
+movie_ratings.each_key {
+  |title|
+  puts title
+}
+movie_ratings.each_value {
+  |title|
+  puts title
+}
